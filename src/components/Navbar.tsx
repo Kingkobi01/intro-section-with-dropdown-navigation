@@ -13,7 +13,7 @@ const Navbar = () => {
   });
   return (
     <header
-      className={`relative after:top-0 after:left-0 after:absolute md:after:hidden after:bg-black/50 py-4 w-full after:w-full after:h-screen text-neutral-200 ${
+      className={`relative after:top-0 after:left-0 after:absolute md:after:hidden after:bg-black/70 py-4 w-full after:w-full after:h-screen text-neutral-200 ${
         !showNav && "after:hidden"
       } `}
     >
@@ -22,7 +22,7 @@ const Navbar = () => {
           <img src="./images/logo.svg" alt="" />
         </Link>
         <nav
-          className={`top-0 right-0 z-50 md:static absolute flex md:flex-row flex-col items-start md:items-center gap-12 bg-white md:bg-transparent shadow-lg md:shadow-none mx-16 mr-auto w-[60%] md:w-full h-screen duration-200 md:h-auto px-8 ${
+          className={`top-0 right-0 z-50 md:static absolute flex md:flex-row flex-col items-start md:items-center gap-12 bg-white md:bg-transparent shadow-lg md:shadow-none mx-16 mr-auto w-2/3 md:w-full h-screen duration-200 md:h-auto px-8 ${
             !showNav &&
             "translate-x-full md:translate-x-0 opacity-0 md:opacity-100"
           }`}
