@@ -27,107 +27,99 @@ const Navbar = () => {
             "translate-x-full md:translate-x-0 opacity-0 md:opacity-100"
           }`}
         >
-          <ul className="flex md:flex-row flex-col items-start md:items-center gap-12 md:my-auto mt-24">
-            <li>
-              <NavLink
-                className="relative"
-                to={"#"}
-                onMouseEnter={() => {
-                  setShowDropDown({
-                    link: "features",
-                    state: true,
-                  });
-                }}
-                onMouseLeave={() => {
-                  setShowDropDown({
-                    link: "",
-                    state: false,
-                  });
-                }}
+          <ul className="flex md:flex-row flex-col items-start md:items-center gap-6 md:gap-12 md:my-auto mt-24">
+            <li
+              className="relative"
+              onMouseEnter={() => {
+                setShowDropDown({
+                  link: "features",
+                  state: true,
+                });
+              }}
+              onMouseLeave={() => {
+                setShowDropDown({
+                  link: "",
+                  state: false,
+                });
+              }}
+            >
+              <div className="flex items-center gap-3 hover:text-neutral-300 duration-200">
+                Features{" "}
+                <span>
+                  <img
+                    src={`${
+                      showDropDown.link === "features"
+                        ? "./images/icon-arrow-up.svg"
+                        : "./images/icon-arrow-down.svg"
+                    }`}
+                    alt={`${
+                      showDropDown.state ? "Hide Dropdown" : "Show Dropdown"
+                    }`}
+                  />
+                </span>
+              </div>
+              <ul
+                className={`md:right-0 md:-bottom-4 md:absolute flex flex-col gap-4 md:bg-white md:shadow-md mt-6 ml-8 md:ml-0 md:p-4 md:w-[max-content] md:translate-y-full duration-200 origin-top ${
+                  showDropDown.link !== "features" &&
+                  "-translate-y-full scale-y-0 h-0 opacity-0 mt-0"
+                }`}
               >
-                <div className="flex items-center gap-3 hover:text-neutral-300 duration-200">
-                  Features{" "}
-                  <span>
-                    <img
-                      src={`${
-                        showDropDown.link === "features"
-                          ? "./images/icon-arrow-up.svg"
-                          : "./images/icon-arrow-down.svg"
-                      }`}
-                      alt={`${
-                        showDropDown.state ? "Hide Dropdown" : "Show Dropdown"
-                      }`}
-                    />
-                  </span>
-                </div>
-                <ul
-                  className={`md:right-0 md:-bottom-4 md:absolute flex flex-col gap-4 md:bg-white md:shadow-md mt-6 ml-8 md:ml-0 md:p-4 md:w-[max-content] md:translate-y-full duration-200 origin-top ${
-                    showDropDown.link !== "features" &&
-                    "-translate-y-full scale-y-0 h-0 opacity-0 mt-0"
-                  }`}
-                >
-                  {dropdownLinks.features.map((i, idx) => (
-                    <li key={idx}>
-                      <Link to={i.link} className="flex items-center gap-4">
-                        <img src={i.linkIcon} alt={i.linkName} />
-                        <span className="text-sm hover:text-neutral-300 duration-200">
-                          {i.linkName}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </NavLink>
+                {dropdownLinks.features.map((i, idx) => (
+                  <li key={idx}>
+                    <Link to={i.link} className="flex items-center gap-4">
+                      <img src={i.linkIcon} alt={i.linkName} />
+                      <span className="text-sm hover:text-neutral-300 duration-200">
+                        {i.linkName}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
-            <li>
-              <NavLink
-                className="relative"
-                to={"#"}
-                onMouseEnter={() => {
-                  setShowDropDown({
-                    link: "company",
-                    state: true,
-                  });
-                }}
-                onMouseLeave={() => {
-                  setShowDropDown({
-                    link: "",
-                    state: false,
-                  });
-                }}
+            <li
+              className="relative"
+              onMouseEnter={() => {
+                setShowDropDown({
+                  link: "company",
+                  state: true,
+                });
+              }}
+              onMouseLeave={() => {
+                setShowDropDown({
+                  link: "",
+                  state: false,
+                });
+              }}
+            >
+              <div className="flex items-center gap-3 hover:text-neutral-300 duration-200">
+                Company{" "}
+                <span>
+                  <img
+                    src={`${
+                      showDropDown.link === "company"
+                        ? "./images/icon-arrow-up.svg"
+                        : "./images/icon-arrow-down.svg"
+                    }`}
+                    alt={`${showDropDown ? "Hide Dropdown" : "Show Dropdown"}`}
+                  />
+                </span>
+              </div>
+              <ul
+                className={`md:right-0 md:-bottom-4 md:absolute flex flex-col gap-4 md:bg-white md:shadow-md mt-6 ml-8 md:ml-0 md:p-4 md:w-[max-content] md:translate-y-full duration-200 origin-top ${
+                  showDropDown.link !== "company" &&
+                  "-translate-y-full scale-y-0 h-0 opacity-0 mt-0"
+                }`}
               >
-                <div className="flex items-center gap-3 hover:text-neutral-300 duration-200">
-                  Company{" "}
-                  <span>
-                    <img
-                      src={`${
-                        showDropDown.link === "company"
-                          ? "./images/icon-arrow-up.svg"
-                          : "./images/icon-arrow-down.svg"
-                      }`}
-                      alt={`${
-                        showDropDown ? "Hide Dropdown" : "Show Dropdown"
-                      }`}
-                    />
-                  </span>
-                </div>
-                <ul
-                  className={`md:right-0 md:-bottom-4 md:absolute flex flex-col gap-4 md:bg-white md:shadow-md mt-6 ml-8 md:ml-0 md:p-4 md:w-[max-content] md:translate-y-full duration-200 origin-top ${
-                    showDropDown.link !== "company" &&
-                    "-translate-y-full scale-y-0 h-0 opacity-0 mt-0"
-                  }`}
-                >
-                  {dropdownLinks.company.map((i, idx) => (
-                    <li key={idx}>
-                      <Link to={i.link} className="flex items-center gap-4">
-                        <span className="text-sm hover:text-neutral-300 duration-200">
-                          {i.linkName}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </NavLink>
+                {dropdownLinks.company.map((i, idx) => (
+                  <li key={idx}>
+                    <Link to={i.link} className="flex items-center gap-4">
+                      <span className="text-sm hover:text-neutral-300 duration-200">
+                        {i.linkName}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>{" "}
             <li>
               <NavLink className="hover:text-neutral-300 duration-200" to={"#"}>
