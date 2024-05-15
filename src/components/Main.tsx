@@ -2,7 +2,7 @@ import Hero from "./Hero";
 
 const Main = () => {
   return (
-    <main className="mx-auto w-full md:w-[80%] max-w-[1120px]">
+    <main className="mx-auto mb-8 w-full md:w-[80%] max-w-[1120px]">
       <Hero />
     </main>
   );
